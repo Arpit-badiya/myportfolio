@@ -7,7 +7,7 @@ const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@
 
 const scrambleText = (element, finalText, { delay = 0, duration = 1400 } = {}) => {
   if (!element) return;
-  const totalFrames = Math.ceil((duration / 1000) * 60);
+  const totalFrames = Math.ceil((duration / 1000) * 70);
   let frame = 0;
   let rafId;
 
@@ -70,7 +70,7 @@ const useTypewriter = (words, { speed = 80, deleteSpeed = 40, pauseMs = 2200 } =
 
 /* ─── Terminal Window Component ──────────────────────────── */
 const TERMINAL_LINES = [
-  { type: 'cmd', text: 'whoami' },
+  { type: 'cmd', text: 'who am i' },
   { type: 'out', text: 'arpit-patidar', color: 'text' },
   { type: 'gap' },
   { type: 'cmd', text: 'cat skills.json' },
@@ -125,7 +125,7 @@ const TerminalWindow = () => {
         </div>
 
         {/* Body */}
-        <div className="p-5 font-mono text-sm space-y-1.5 min-h-[230px]">
+        <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm space-y-1.5 min-h-[200px] overflow-x-auto">
           {TERMINAL_LINES.map((line) => {
             if (line.type === 'gap') {
               idx++;
@@ -172,7 +172,7 @@ const TerminalWindow = () => {
               <div
                 key={line.text}
                 ref={(el) => (lineRefs.current[liIdx] = el)}
-                className={`pl-5 ${colorMap[line.color] ?? 'text-muted'}`}
+                className={`pl-4 sm:pl-5 wrap-break-word whitespace-pre-wrap ${colorMap[line.color] ?? 'text-muted'}`}
               >
                 {line.text}
               </div>
@@ -324,14 +324,20 @@ const Hero = () => {
           </div>
 
           {/* Bio */}
-          <p ref={bioRef} className="text-muted text-base md:text-lg leading-relaxed max-w-xl">
+          <p
+            ref={bioRef}
+            className="text-muted text-sm sm:text-base md:text-lg leading-relaxed max-w-xl text-center sm:text-left"
+          >
             Passionate <span className="text-text font-medium">Frontend Developer</span> and
             B.Tech IT student focused on building modern, responsive web applications and
             smooth user experiences.
           </p>
 
           {/* CTAs */}
-          <div ref={ctaRef} className="flex flex-wrap items-center gap-4">
+          <div
+            ref={ctaRef}
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 w-full"
+          >
             <a
               href="#projects"
               data-magnetic
@@ -339,9 +345,9 @@ const Hero = () => {
                 e.preventDefault();
                 document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="group flex items-center gap-2 px-7 py-3.5 bg-accent text-primary font-bold text-sm
+              className="group flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 bg-accent text-primary font-bold text-sm
                 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:bg-white
-                transition-all duration-300 hover:-translate-y-0.5"
+                transition-all duration-300 hover:-translate-y-0.5 text-center"
             >
               View Projects
               <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -350,9 +356,9 @@ const Hero = () => {
             <a
               href="#"
               data-magnetic
-              className="flex items-center gap-2 px-7 py-3.5 border border-border text-text font-semibold text-sm
+              className="flex items-center justify-center gap-2 w-full sm:w-auto px-7 py-3.5 border border-border text-text font-semibold text-sm
                 rounded-full hover:border-accent/40 hover:text-accent transition-all duration-300
-                hover:-translate-y-0.5"
+                hover:-translate-y-0.5 text-center"
             >
               <Download size={15} />
               Download CV

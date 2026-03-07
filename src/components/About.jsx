@@ -159,7 +159,7 @@ const About = () => {
             <div className="space-y-5 text-muted leading-relaxed text-[15px]">
               <p>
                 I'm <span className="text-text font-semibold">Arpit Patidar</span>, a
-                <span className="text-text font-semibold"> 3rd year B.Tech IT student </span>
+                <span className="text-text font-semibold"> B.Tech IT student </span>
                 passionate about building modern and interactive digital experiences. I have a
                 strong foundation in web development and enjoy turning ideas into responsive
                 and user-friendly applications.
@@ -184,7 +184,7 @@ const About = () => {
 
             {/* Tech highlights */}
             <div className="mt-8 flex flex-wrap gap-2">
-              {['React', 'Node.js', 'TypeScript', 'AWS', 'Docker', 'PostgreSQL', 'GraphQL', 'Next.js'].map(t => (
+              {['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'GraphQL', 'Next.js'].map(t => (
                 <span key={t} className="tag-pill">{t}</span>
               ))}
             </div>
