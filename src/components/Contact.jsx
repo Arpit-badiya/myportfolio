@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Github, Linkedin, Twitter, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 /* ─── Contact Info ───────────────────────────────────────── */
 const INFO = [
-  { icon: Mail,    label: 'Email',     value: 'arpit@patidar.dev',        href: 'mailto:arpit@patidar.dev'    },
-  { icon: Github,  label: 'GitHub',    value: 'github.com/arpit-patidar', href: 'https://github.com'          },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/arpit',    href: 'https://linkedin.com'        },
-  { icon: Twitter, label: 'Twitter/X', value: '@arpit_dev',               href: 'https://twitter.com'         },
+  { icon: Mail,    label: 'Email',     value: '0112it231008@gmail.com',        href: 'mailto:0112it231008@gmail.com'    },
+  { icon: Github,  label: 'GitHub',    value: 'https://github.com/Arpit-badiya', href: 'https://github.com/Arpit-badiya'          },
+  { icon: Linkedin, label: 'LinkedIn', value: 'https://linkedin.com/in/arpit-patidar-462b16221',    href: 'https://linkedin.com/in/arpit-patidar-462b16221'        },
   { icon: MapPin,  label: 'Location',  value: 'India — Remote Worldwide',  href: null                         },
   { icon: Clock,   label: 'Timezone',  value: 'IST (UTC +5:30)',           href: null                         },
 ];
@@ -188,11 +187,11 @@ const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
-                  <Field label="Name"  type="text"  placeholder="Arpit Patidar"    />
-                  <Field label="Email" type="email" placeholder="you@example.com"  />
+                  <Field label="Name"  type="text"  placeholder="Enter your name"    />
+                  <Field label="Email" type="email" placeholder="Enter your email"  />
                 </div>
-                <Field label="Subject"  type="text" placeholder="Project discussion..." />
-                <Field label="Message" textarea placeholder="Tell me about your project, timeline, and budget..." />
+                <Field label="Subject"  type="text" placeholder="Enter your subject" />
+                <Field label="Message" textarea placeholder="Enter your message" />
 
                 <button
                   type="submit"

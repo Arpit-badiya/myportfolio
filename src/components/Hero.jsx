@@ -13,13 +13,13 @@ const scrambleText = (element, finalText, { delay = 0, duration = 1400 } = {}) =
 
   const animate = () => {
     const progress = frame / totalFrames;
-    const revealed  = Math.floor(progress * finalText.length);
+    const revealed = Math.floor(progress * finalText.length);
 
     element.textContent = finalText
       .split('')
       .map((char, i) => {
         if (char === ' ') return ' ';
-        if (i < revealed)  return char;
+        if (i < revealed) return char;
         return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
       })
       .join('');
@@ -35,8 +35,8 @@ const scrambleText = (element, finalText, { delay = 0, duration = 1400 } = {}) =
 
 /* ─── Typewriter Hook ────────────────────────────────────── */
 const useTypewriter = (words, { speed = 80, deleteSpeed = 40, pauseMs = 2200 } = {}) => {
-  const [text,     setText]     = useState('');
-  const [wIdx,     setWIdx]     = useState(0);
+  const [text, setText] = useState('');
+  const [wIdx, setWIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const paused = useRef(false);
 
@@ -70,21 +70,21 @@ const useTypewriter = (words, { speed = 80, deleteSpeed = 40, pauseMs = 2200 } =
 
 /* ─── Terminal Window Component ──────────────────────────── */
 const TERMINAL_LINES = [
-  { type: 'cmd', text: 'whoami'                                             },
-  { type: 'out', text: 'arpit-patidar',                    color: 'text'   },
-  { type: 'gap'                                                              },
-  { type: 'cmd', text: 'cat skills.json'                                    },
-  { type: 'out', text: '["React","Node.js","TypeScript","AWS"]', color: 'muted' },
-  { type: 'gap'                                                              },
-  { type: 'cmd', text: 'status --check'                                     },
-  { type: 'out', text: '✓ Open to opportunities',           color: 'green'  },
-  { type: 'gap'                                                              },
-  { type: 'prompt'                                                           },
+  { type: 'cmd', text: 'whoami' },
+  { type: 'out', text: 'arpit-patidar', color: 'text' },
+  { type: 'gap' },
+  { type: 'cmd', text: 'cat skills.json' },
+  { type: 'out', text: '["React","Node.js","TypeScript","React-Native"]', color: 'muted' },
+  { type: 'gap' },
+  { type: 'cmd', text: 'status --check' },
+  { type: 'out', text: '✓ Open to opportunities', color: 'green' },
+  { type: 'gap' },
+  { type: 'prompt' },
 ];
 
 const TerminalWindow = () => {
-  const lineRefs  = useRef([]);
-  const wrapRef   = useRef(null);
+  const lineRefs = useRef([]);
+  const wrapRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -117,9 +117,9 @@ const TerminalWindow = () => {
         {/* Title bar */}
         <div className="flex items-center gap-2 px-4 py-3 bg-elevated/60 border-b border-white/5">
           <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-400/80"   />
+            <span className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-green-400/80"  />
+            <span className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
           </div>
           <span className="font-mono text-xs text-muted ml-2">arpit@dev  ~</span>
         </div>
@@ -201,24 +201,24 @@ const SocialLink = ({ href, icon: Icon, label }) => (
 
 /* ─── Hero ───────────────────────────────────────────────── */
 const ROLES = [
-  'Senior Full Stack Engineer',
-  'Cloud & DevOps Architect',
+  'Full Stack Engineer',
+  'Application Developer',
   'React Specialist',
-  'Node.js & API Expert',
+  'Software Developer',
 ];
 
 const Hero = () => {
-  const heroRef    = useRef(null);
-  const gridRef    = useRef(null);
-  const nameRef    = useRef(null);
-  const badgeRef   = useRef(null);
-  const roleRef    = useRef(null);
-  const bioRef     = useRef(null);
-  const ctaRef     = useRef(null);
+  const heroRef = useRef(null);
+  const gridRef = useRef(null);
+  const nameRef = useRef(null);
+  const badgeRef = useRef(null);
+  const roleRef = useRef(null);
+  const bioRef = useRef(null);
+  const ctaRef = useRef(null);
   const socialsRef = useRef(null);
-  const orb1Ref    = useRef(null);
-  const orb2Ref    = useRef(null);
-  const scrollRef  = useRef(null);
+  const orb1Ref = useRef(null);
+  const orb2Ref = useRef(null);
+  const scrollRef = useRef(null);
 
   const currentRole = useTypewriter(ROLES, { speed: 70, deleteSpeed: 35, pauseMs: 2000 });
 
@@ -252,13 +252,13 @@ const Hero = () => {
 
       /* Staggered text entrance */
       const tl = gsap.timeline({ delay: 0.3 });
-      tl.from(badgeRef.current,   { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' })
-        .from(nameRef.current,    { opacity: 0, y: 40, duration: 0.01 }, '-=0.3')
-        .from(roleRef.current,    { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.3')
-        .from(bioRef.current,     { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-        .from(ctaRef.current,     { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.4')
+      tl.from(badgeRef.current, { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' })
+        .from(nameRef.current, { opacity: 0, y: 40, duration: 0.01 }, '-=0.3')
+        .from(roleRef.current, { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.3')
+        .from(bioRef.current, { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.4')
+        .from(ctaRef.current, { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.4')
         .from(socialsRef.current, { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-        .from(scrollRef.current,  { opacity: 0,         duration: 0.5                     }, '-=0.2');
+        .from(scrollRef.current, { opacity: 0, duration: 0.5 }, '-=0.2');
     }, heroRef);
 
     /* Name scramble starts after badge entrance */
@@ -325,10 +325,9 @@ const Hero = () => {
 
           {/* Bio */}
           <p ref={bioRef} className="text-muted text-base md:text-lg leading-relaxed max-w-xl">
-            Crafting{' '}
-            <span className="text-text font-medium">scalable cloud-native systems</span> and
-            immersive frontend experiences. 5+ years shipping production-grade software that
-            balances technical depth with exceptional UX.
+            Passionate <span className="text-text font-medium">Frontend Developer</span> and
+            B.Tech IT student focused on building modern, responsive web applications and
+            smooth user experiences.
           </p>
 
           {/* CTAs */}
@@ -362,10 +361,9 @@ const Hero = () => {
 
           {/* Socials */}
           <div ref={socialsRef} className="flex items-center gap-3">
-            <SocialLink href="https://github.com"    icon={Github}   label="GitHub"    />
-            <SocialLink href="https://linkedin.com"  icon={Linkedin} label="LinkedIn"  />
-            <SocialLink href="https://twitter.com"   icon={Twitter}  label="Twitter/X" />
-            <SocialLink href="mailto:arpit@mail.com" icon={Mail}     label="Email"     />
+            <SocialLink href="https://github.com/Arpit-badiya" icon={Github} label="GitHub" />
+            <SocialLink href="https://linkedin.com/in/arpit-patidar-462b16221" icon={Linkedin} label="LinkedIn" />
+            <SocialLink href="0112it231008@gmail.com" icon={Mail} label="Email" />
           </div>
         </div>
 

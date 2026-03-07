@@ -1,10 +1,9 @@
 import { Github, Linkedin, Twitter, Mail, ArrowUp } from 'lucide-react';
 
 const SOCIALS = [
-  { icon: Github,   href: 'https://github.com',   label: 'GitHub'    },
-  { icon: Linkedin, href: 'https://linkedin.com',  label: 'LinkedIn'  },
-  { icon: Twitter,  href: 'https://twitter.com',   label: 'Twitter/X' },
-  { icon: Mail,     href: 'mailto:arpit@patidar.dev', label: 'Email' },
+  { icon: Github,   href: 'https://github.com/Arpit-badiya',   label: 'GitHub'    },
+  { icon: Linkedin, href: 'https://linkedin.com/in/arpit-patidar-462b16221',  label: 'LinkedIn'  },
+  { icon: Mail,     href: 'mailto:0112it231008@gmail.com', label: 'Email' },
 ];
 
 const Footer = () => {
@@ -20,7 +19,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="flex flex-col items-center sm:items-start gap-1">
           <a href="#" onClick={scrollToTop} className="font-display font-bold text-text text-xl tracking-tight">
-            AP<span className="text-accent">.</span>
+            Arpit Patidar <span className="text-accent">.</span>
           </a>
           <p className="text-muted text-xs font-mono">
             © {new Date().getFullYear()} Arpit Patidar. All rights reserved.

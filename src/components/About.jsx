@@ -46,35 +46,30 @@ const StatCard = ({ icon: Icon, end, suffix, prefix, label, color }) => (
 /* ─── Experience Timeline ────────────────────────────────── */
 const EXPERIENCE = [
   {
-    year:    '2023 — Present',
-    role:    'Senior Software Engineer',
-    company: 'TechCorp Solutions',
-    desc:    'Leading architecture and development of enterprise SaaS products. Migrated monolith to microservices on AWS, achieving 99.99% uptime and 3× throughput.',
-    accent:  'accent',
+    
+    role: 'Software Engineer',
+    desc: 'Developing and maintaining web applications using React, Node.js, and MongoDB.',
+    accent: 'accent',
   },
   {
-    year:    '2021 — 2023',
-    role:    'Full Stack Developer',
-    company: 'StartupXYZ',
-    desc:    'Built high-performance React + Node.js web apps from scratch. Reduced initial load time by 62% via code-splitting and CDN optimisation.',
-    accent:  'accent-2',
+    role: 'Full Stack Developer',
+    desc: 'Built high-performance React + Node.js web apps from scratch. Reduced initial load time by 62% via code-splitting and CDN optimisation.',
+    accent: 'accent-2',
   },
   {
-    year:    '2019 — 2021',
-    role:    'Junior Web Developer',
-    company: 'Digital Agency Inc.',
-    desc:    'Shipped 20+ client websites and internal tools. Introduced component-driven development and cut delivery time by 40%.',
-    accent:  'accent-3',
+    role: 'Mobile App Developer',
+    desc: 'Developing and maintaining mobile applications using React Native and Expo.',
+    accent: 'accent-3',
   },
 ];
 
 /* ─── About ──────────────────────────────────────────────── */
 const About = () => {
-  const sectionRef  = useRef(null);
-  const statsRef    = useRef(null);
-  const bioRef      = useRef(null);
+  const sectionRef = useRef(null);
+  const statsRef = useRef(null);
+  const bioRef = useRef(null);
   const timelineRef = useRef(null);
-  const lineRef     = useRef(null);
+  const lineRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -111,7 +106,7 @@ const About = () => {
           scrollTrigger: {
             trigger: timelineRef.current,
             start: 'top 75%',
-            end:   'bottom 40%',
+            end: 'bottom 40%',
             scrub: 1.2,
           },
         });
@@ -145,10 +140,10 @@ const About = () => {
 
         {/* ── Stat Cards ── */}
         <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
-          <StatCard icon={Briefcase} end={5}   suffix="+"  label="Years of Experience" color="text-accent"   />
-          <StatCard icon={Code2}     end={50}  suffix="+"  label="Projects Delivered"  color="text-accent-2" />
-          <StatCard icon={Calendar}  end={15}  suffix="+"  label="Technologies Used"   color="text-accent-3" />
-          <StatCard icon={Users}     end={100} suffix="+"  label="Clients Worldwide"   color="text-accent"   />
+          <StatCard icon={Briefcase} end={5} suffix="+" label="Years of Experience" color="text-accent" />
+          <StatCard icon={Code2} end={50} suffix="+" label="Projects Delivered" color="text-accent-2" />
+          <StatCard icon={Calendar} end={15} suffix="+" label="Technologies Used" color="text-accent-3" />
+          <StatCard icon={Users} end={100} suffix="+" label="Clients Worldwide" color="text-accent" />
         </div>
 
         {/* ── Two-column ── */}
@@ -163,21 +158,27 @@ const About = () => {
 
             <div className="space-y-5 text-muted leading-relaxed text-[15px]">
               <p>
-                I'm a{' '}
-                <span className="text-text font-semibold">Senior IT Engineer</span> with a sharp focus
-                on full-stack architecture and cloud-native infrastructure. My work lives at the
-                intersection of performant code and elegant user experience.
+                I'm <span className="text-text font-semibold">Arpit Patidar</span>, a
+                <span className="text-text font-semibold"> 3rd year B.Tech IT student </span>
+                passionate about building modern and interactive digital experiences. I have a
+                strong foundation in web development and enjoy turning ideas into responsive
+                and user-friendly applications.
               </p>
+
               <p>
-                I've led migrations from legacy monoliths to{' '}
-                <span className="text-text font-semibold">Kubernetes-orchestrated microservices</span>,
-                built real-time data pipelines, and crafted zero-downtime deployment pipelines on AWS
-                — all while obsessing over developer experience and code quality.
+                My expertise lies mainly in
+                <span className="text-text font-semibold"> Frontend Development</span>, where I
+                work with modern technologies to create fast, scalable, and visually engaging
+                interfaces. Along with frontend, I also have a good understanding of
+                <span className="text-text font-semibold"> Backend Development</span> and
+                full-stack application architecture.
               </p>
+
               <p>
-                When I'm not writing code, I'm contributing to open-source,
-                mentoring junior devs, or exploring the frontier of AI tooling and
-                edge computing.
+                Currently, I am expanding my skills in
+                <span className="text-text font-semibold"> Mobile App Development</span>. I enjoy
+                learning new technologies, building real-world projects, and continuously
+                improving my development skills while exploring modern tools and frameworks.
               </p>
             </div>
 
@@ -193,7 +194,7 @@ const About = () => {
           <div ref={timelineRef} className="relative pl-6">
             {/* Vertical line */}
             <div className="absolute left-0 top-0 bottom-0 w-px bg-border">
-              <div ref={lineRef} className="w-full h-full bg-gradient-to-b from-accent via-accent-2 to-accent-3 timeline-line-track" />
+              <div ref={lineRef} className="w-full h-full bg-linear-to-b from-accent via-accent-2 to-accent-3 timeline-line-track" />
             </div>
 
             <div className="space-y-10">
@@ -201,20 +202,17 @@ const About = () => {
                 <div key={i} className="timeline-item relative">
                   {/* Dot */}
                   <div
-                    className={`absolute -left-[1.5rem] top-1.5 w-3 h-3 rounded-full border-2 bg-primary ${
-                      exp.accent === 'accent'   ? 'border-accent'   :
-                      exp.accent === 'accent-2' ? 'border-accent-2' : 'border-accent-3'
-                    }`}
+                    className={`absolute -left-6 top-1.5 w-3 h-3 rounded-full border-2 bg-primary ${exp.accent === 'accent' ? 'border-accent' :
+                        exp.accent === 'accent-2' ? 'border-accent-2' : 'border-accent-3'
+                      }`}
                     style={{ transform: 'translateX(-50%)' }}
                   />
 
                   <span className="font-mono text-xs text-muted tracking-wide">{exp.year}</span>
                   <h4 className="font-display font-bold text-text text-lg mt-1 mb-0.5">{exp.role}</h4>
-                  <p className={`text-sm font-semibold mb-2 ${
-                    exp.accent === 'accent'   ? 'text-accent'   :
-                    exp.accent === 'accent-2' ? 'text-accent-2' : 'text-accent-3'
-                  }`}>
-                    @ {exp.company}
+                  <p className={`text-sm font-semibold mb-2 ${exp.accent === 'accent' ? 'text-accent' :
+                      exp.accent === 'accent-2' ? 'text-accent-2' : 'text-accent-3'
+                    }`}>
                   </p>
                   <p className="text-muted text-sm leading-relaxed">{exp.desc}</p>
                 </div>
