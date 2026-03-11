@@ -38,11 +38,11 @@ const PROJECTS = [
   {
     id: 4,
     num: '04',
-    title: 'Healthcare Management',
-    desc:  'HIPAA-compliant platform managing patient records, appointments & billing. End-to-end encryption with audit trails and role-based access.',
-    tags:  ['Vue.js', 'Firebase', 'Express', 'Tailwind', 'TypeScript'],
+    title: 'Employee Management System',
+    desc:  'Frontend-based employee management system to manage employees, assign tasks and track their status. Built with React & Tailwind CSS and uses browser localStorage to store all data.',
+    tags:  ['React', 'Tailwind CSS', 'JavaScript'],
     from:  '#f59e0b', to: '#ef4444',
-    live:  '#',
+    live:  'https://arpit-badiya.github.io/E.M.System/',
     code:  '#',
   },
   {
@@ -111,6 +111,12 @@ const TiltCard = ({ project }) => {
     if (shineRef.current) gsap.to(shineRef.current, { opacity: 0, duration: 0.4 });
   }, []);
 
+  const handleClick = () => {
+    if (project.live && project.live !== '#') {
+      window.open(project.live, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div
       ref={cardRef}
@@ -118,6 +124,7 @@ const TiltCard = ({ project }) => {
         hover:border-white/12 transition-colors duration-500 cursor-pointer"
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
+      onClick={handleClick}
       style={{ transformStyle: 'preserve-3d', willChange: 'transform' }}
     >
       {/* Gradient header */}

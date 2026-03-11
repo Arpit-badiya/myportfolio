@@ -138,13 +138,13 @@ const About = () => {
           </h2>
         </div>
 
-        {/* ── Stat Cards ── */}
+        {/* ── Stat Cards ──
         <div ref={statsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
           <StatCard icon={Briefcase} end={5} suffix="+" label="Years of Experience" color="text-accent" />
           <StatCard icon={Code2} end={50} suffix="+" label="Projects Delivered" color="text-accent-2" />
           <StatCard icon={Calendar} end={15} suffix="+" label="Technologies Used" color="text-accent-3" />
           <StatCard icon={Users} end={100} suffix="+" label="Clients Worldwide" color="text-accent" />
-        </div>
+        </div> */}
 
         {/* ── Two-column ── */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
